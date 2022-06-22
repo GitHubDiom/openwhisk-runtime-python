@@ -67,7 +67,7 @@ RUN curl -L https://downloads.rclone.org/rclone-current-linux-amd64.deb -o rclon
 COPY requirements_common.txt requirements_common.txt
 COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip six wheel &&\
-    pip3 install --no-cache-dir -r requirements.txt &&\
+    pip3 install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple &&\
     ln -sf /usr/bin/python3 /usr/local/bin/python
 
 RUN mkdir -p /action

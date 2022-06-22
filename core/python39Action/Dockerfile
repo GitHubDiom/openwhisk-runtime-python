@@ -46,7 +46,7 @@ RUN apt-get update && apt-get install -y zip \
 COPY requirements_common.txt requirements_common.txt
 COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip six wheel &&\
-    pip3 install --no-cache-dir -r requirements.txt
+    pip3 install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 RUN mkdir -p /action
 WORKDIR /
